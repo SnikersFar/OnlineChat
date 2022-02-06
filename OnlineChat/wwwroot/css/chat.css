@@ -1,0 +1,32 @@
+﻿.chat_block {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 542px;
+    height: 80vh;
+    border: 1px solid #dfdfdf;
+}
+
+.chat_key_block{
+}
+
+.chat_list{
+    flex-grow: 3;
+}
+
+
+.chat_send_block{
+
+}
+
+.body_block {
+    width: 100%;
+    height: 100%;
+    background-color: #edeef0;
+    justify-content: center;
+    display: flex;
+}
+
+body {
+    background-color: #edeef0;
+}
