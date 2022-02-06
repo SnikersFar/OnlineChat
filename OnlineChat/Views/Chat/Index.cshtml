@@ -3,6 +3,7 @@
 }
 @section Styles{
 <link rel="stylesheet" href="~/css/chat.css" />
+<script src="~/js/signalr.min.js"></script>
 }
 <div class="body_block">
     <div class="chat_block">
@@ -10,12 +11,13 @@
             <a>My key</a>
         </div>
         <div class="chat_list">
-            <a>My sms</a>
-            <a>My sms</a>
-            <a>My sms</a>
         </div>
         <div class="chat_send_block">
-            <a>Send</a>
+            <div id="inputForm">
+                <input type="text" id="product" />
+                <a class="SendMes">Send</a>
+                <input type="button" id="sendBtn" value="Добавить" />
+            </div>
         </div>
 
     </div>

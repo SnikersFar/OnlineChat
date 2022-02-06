@@ -11,8 +11,10 @@
     border-bottom: 1px solid #000;
 }
 
-.chat_list{
+.chat_list {
     flex-grow: 3;
+    flex-direction: column;
+    display: flex;
 }
 
 
