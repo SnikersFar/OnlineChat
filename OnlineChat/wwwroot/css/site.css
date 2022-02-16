@@ -83,3 +83,51 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+
+
+a.SendMes {
+    display: inline-block;
+    color: gray;
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+    padding: .5em 2em;
+    outline: none;
+    border: 2px solid;
+    border-radius: 1px;
+    transition: 0.2s;
+    background-image: url(sendButton.png);
+    background-clip: border-box;
+    background-size: 100% 100%;
+}
+
+    a.SendMes:hover {
+        background: rgba(255,255,255,.2);
+    }
+
+    a.SendMes:active {
+        background: white;
+    }
+
+#inputForm {
+    justify-content: right;
+    display: flex;
+}
+.InputText {
+    width: 95%;
+}
+.blockSend {
+    width: 5%
+}
+.imgButton {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.chat_list {
+    height: 100px;
+    overflow-y: auto;
+}

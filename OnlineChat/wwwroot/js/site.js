@@ -7,10 +7,14 @@
     hubConnection.on('Receive', function (message) {
 
         let elem = $("<a>");
+        elem.addClass('message');
         elem.text(message);
 
         let list = $(".chat_list");
         list.append(elem);
+
+        const topPosition = $(".message:last").position().top;
+        $(".chat_list").animate({ scrollTop: topPosition }, 300);
 
     });
     hubConnection.on('Notify', function (message) {
@@ -18,7 +22,7 @@
     });
 
     // отправка сообщения на сервер
-    $(".SendMes").click(function(){
+    $(".ImgSend").click(function(){
         let mes = $("#product").val();
         hubConnection.invoke('NewMessage', mes);
         $("#product").val("");
