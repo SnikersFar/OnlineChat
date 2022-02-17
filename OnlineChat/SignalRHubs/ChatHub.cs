@@ -9,9 +9,10 @@ namespace OnlineChat.SignalRHubs
         {
         }
 
-        public async Task NewMessage(string message)
+        public async Task NewMessage(string message, string key)
         {
-            await Clients.All.SendAsync("Receive", message);
+            
+            await Clients.All.SendAsync("Receive", message, key);
         }
     }
 }
