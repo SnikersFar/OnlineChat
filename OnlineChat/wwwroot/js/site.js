@@ -7,20 +7,20 @@
     hubConnection.on('Receive', function (message, key) {
         let common = false;
         let myKey = $("#MyKey").val();
-        if ((myKey == "" || myKey == "0") &&  key == "0") {
+        if ((myKey == "" || myKey == "0") && key == "0") {
             common = true;
         }
         if (myKey == key || common) {
 
-        
-        let elem = $("<a>");
-        elem.addClass('message');
-        elem.text(message);
 
-        let list = $(".chat_list");
-        list.append(elem);
+            let elem = $("<a>");
+            elem.addClass('message');
+            elem.text(message);
 
-        const topPosition = $(".message:last").position().top;
+            let list = $(".chat_list");
+            list.append(elem);
+
+            const topPosition = $(".message:last").position().top;
             $(".chat_list").animate({ scrollTop: topPosition }, 300);
         }
 
@@ -30,7 +30,15 @@
     });
 
     // отправка сообщения на сервер
-    $(".ImgSend").click(function(){
+    $(".ImgSend").click(sendMes);
+
+    $(document).keydown(function (e) {
+        if (e.key == "Enter" || e.keyCode == 13) {
+            sendMes();
+        }
+    });
+
+    function sendMes() {
         let mes = $("#product").val();
         let myKey = $("#MyKey").val();
         if (myKey == "") {
@@ -38,21 +46,14 @@
         } else {
             hubConnection.invoke('NewMessage', mes, $("#MyKey").val());
         }
-        
+
         $("#product").val("");
-    });
-
-
-    $(document).keydown(function (e) {
-        if (e.key === "Enter" || e.keyCode === 13) {
-            let mes = $("#product").val();
-            hubConnection.invoke('NewMessage', mes);
-            $("#product").val("");
-        }
-    });
+    }
 
 
 
 
-    hubConnection.start();
+
+
+hubConnection.start();
 });
