@@ -4,7 +4,10 @@
         .build();
 
     // получение сообщения от сервера
-    hubConnection.on('Receive', function (message, key) {
+    hubConnection.on('Receive', function (message, key, name) {
+        if (name == "") {
+            name = "Unknown_User";
+        }
         let common = false;
         let myKey = $("#MyKey").val();
         if ((myKey == "" || myKey == "0") && key == "0") {
@@ -15,7 +18,8 @@
 
             let elem = $("<a>");
             elem.addClass('message');
-            elem.text(message);
+            elem.style = "background-color: " + '#' + (Math.random().toString(16) + '000000').substring(2, 8).toUpperCase();
+            elem.text(name + ": " + message);
 
             let list = $(".chat_list");
             list.append(elem);
@@ -44,7 +48,7 @@
         if (myKey == "") {
             hubConnection.invoke('NewMessage', mes, "0");
         } else {
-            hubConnection.invoke('NewMessage', mes, $("#MyKey").val());
+            hubConnection.invoke('NewMessage', mes, $("#MyKey").val(), $("#MyNick").val() );
         }
 
         $("#product").val("");
@@ -55,5 +59,5 @@
 
 
 
-hubConnection.start();
+    hubConnection.start();
 });
