@@ -8,16 +8,14 @@
 <div class="body_block">
     <div class="chat_block">
         <div class="chat_key_block">
-            <a>Установите ключ, либо оставьте поле пустым или укажите 0, чтобы находиться в общем чате</a>
-            <input id="MyKey" type="text" placeholder="Set a key"/>
-            <a>Ваш Nickname</a>
-            <input id="MyNick" type="text" placeholder="Set a key"/>
+                <input id="MyKey" type="text" placeholder="Set a key" title="Set the key, or leave the field empty or specify 0 to be in the general chat." maxlength="10" />
+                <input id="MyNick" type="text" placeholder="Set a NickName" required="required" title="Come up with a NickName for the chat." maxlength="10" />
         </div>
         <div class="chat_list">
         </div>
         <div class="chat_send_block">
             <div id="inputForm">
-                <input type="text" id="product" class="InputText" placeholder="Write a message" />
+                <input type="text" id="product" class="InputText" placeholder="Write a message" maxlength="100" />
                 <div class="blockSend">
                     <a class="ImgSend" href="#">
                         <img class="imgButton" src="~/css/sendButton.png" />

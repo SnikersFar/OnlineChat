@@ -5,10 +5,13 @@
     width: 542px;
     border: 1px solid #dfdfdf;
     height: 100%;
+    border-radius: 20px;
 }
 
 .chat_key_block {
     border-bottom: 1px solid #000;
+    display: flex;
+    justify-content: center;
 }
 
 .chat_list {
@@ -32,4 +35,28 @@
 
 body {
     background-color: #edeef0;
+}
+
+
+#MyNick {
+    border-radius: 25px;
+    text-align: center;
+    margin: 10px;
+}
+#MyKey {
+    border-radius: 25px;
+    text-align: center;
+    margin: 10px;
+}
+#product {
+    border-radius: 25px;
+}
+
+.message {
+    word-wrap: break-word;
+    word-break: break-all; /* более приоритетно */
+    margin-bottom: 2px;
+    margin-top: 2px;
+    margin-left: 5px;
+    margin-right: 5px;
 }

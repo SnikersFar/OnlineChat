@@ -22,11 +22,11 @@
 
             elem.addClass('message');
             NameElem.css("color", '#' + (Math.random().toString(16) + '000000').substring(2, 8).toUpperCase());
-            
+
             NameElem.text(name + ": ");
             elem.append(NameElem);
             elem.append(message);
-            
+
 
             let list = $(".chat_list");
             list.append(elem);
@@ -53,10 +53,15 @@
         let mes = $("#product").val();
         let myKey = $("#MyKey").val();
         let myNick = $("#MyNick").val();
-        if (myKey == "") {
-            hubConnection.invoke('NewMessage', mes, "0", myNick);
-        } else {
-            hubConnection.invoke('NewMessage', mes, $("#MyKey").val(), $("#MyNick").val() );
+        mes = mes.replace(/\s+/g, ' ');
+        if (mes == "" || mes == " ") { }
+        else {
+
+            if (myKey == "") {
+                hubConnection.invoke('NewMessage', mes, "0", myNick);
+            } else {
+                hubConnection.invoke('NewMessage', mes, $("#MyKey").val(), $("#MyNick").val());
+            }
         }
 
         $("#product").val("");
