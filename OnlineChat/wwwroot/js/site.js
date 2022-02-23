@@ -5,7 +5,8 @@
 
     // получение сообщения от сервера
     hubConnection.on('Receive', function (message, key, name) {
-        if (name == "") {
+        name = name.replace(/\s+/g, ' ');
+        if (name == "" || name == " ") {
             name = "Unknown_User";
         }
         let common = false;
