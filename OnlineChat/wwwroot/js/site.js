@@ -17,9 +17,15 @@
 
 
             let elem = $("<a>");
+            let NameElem = $("<a>");
+
             elem.addClass('message');
-            elem.style = "background-color: " + '#' + (Math.random().toString(16) + '000000').substring(2, 8).toUpperCase();
-            elem.text(name + ": " + message);
+            NameElem.css("color", '#' + (Math.random().toString(16) + '000000').substring(2, 8).toUpperCase());
+            
+            NameElem.text(name + ": ");
+            elem.append(NameElem);
+            elem.append(message);
+            
 
             let list = $(".chat_list");
             list.append(elem);
