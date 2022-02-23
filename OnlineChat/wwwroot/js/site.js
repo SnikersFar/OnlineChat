@@ -45,8 +45,9 @@
     function sendMes() {
         let mes = $("#product").val();
         let myKey = $("#MyKey").val();
+        let myNick = $("#MyNick").val();
         if (myKey == "") {
-            hubConnection.invoke('NewMessage', mes, "0");
+            hubConnection.invoke('NewMessage', mes, "0", myNick);
         } else {
             hubConnection.invoke('NewMessage', mes, $("#MyKey").val(), $("#MyNick").val() );
         }
