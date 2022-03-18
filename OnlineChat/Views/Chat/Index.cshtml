@@ -8,21 +8,32 @@
 <div class="body_block">
     <div class="chat_block">
         <div class="chat_key_block">
-                <input id="MyKey" type="text" placeholder="Set a key" title="Set the key, or leave the field empty or specify 0 to be in the general chat." maxlength="16" />
-                <input id="MyNick" type="text" placeholder="Set a NickName" required="required" title="Come up with a NickName for the chat." maxlength="16" />
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">&</span>
+                </div>
+                <input id="MyKey" type="text" class="form-control" placeholder="SetKey" aria-label="Key" aria-describedby="basic-addon1">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">@@</span>
+                </div>
+                <input id="MyNick" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
         </div>
-        <div class="chat_list">
+        <div class="chat_list pan1">
         </div>
         <div class="chat_send_block">
             <div id="inputForm">
-                <input type="text" id="product" class="InputText" placeholder="Write a message" maxlength="100" />
+                <input type="text" id="product" class="form-control" placeholder="Write a message" maxlength="100" />
                 <div class="blockSend">
                     <a class="ImgSend" href="#">
                         <img class="imgButton" src="~/css/sendButton.png" />
                     </a>
                 </div>
             </div>
+            <div id="resize">...</div>
         </div>
 
+    </div>
+    <div class="pan2">
     </div>
 </div>

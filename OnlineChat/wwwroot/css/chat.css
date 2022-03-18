@@ -5,11 +5,11 @@
     width: 542px;
     border: 1px solid #dfdfdf;
     height: 100%;
-    border-radius: 20px;
+    border-radius: 6px;
 }
 
 .chat_key_block {
-    border-bottom: 1px solid #000;
+    /*  border-bottom: 1px solid #000;*/
     display: flex;
     justify-content: center;
 }
@@ -21,8 +21,7 @@
 }
 
 
-.chat_send_block{
-
+.chat_send_block {
 }
 
 .body_block {
@@ -31,6 +30,7 @@
     background-color: #edeef0;
     justify-content: center;
     display: flex;
+    flex-direction: column;
 }
 
 body {
@@ -39,17 +39,14 @@ body {
 
 
 #MyNick {
-    border-radius: 25px;
     text-align: center;
-    margin: 10px;
 }
+
 #MyKey {
-    border-radius: 25px;
-    text-align: center;
-    margin: 10px;
 }
+
 #product {
-    border-radius: 25px;
+    /* border-radius: 25px;*/
 }
 
 .message {
@@ -59,4 +56,24 @@ body {
     margin-top: 2px;
     margin-left: 5px;
     margin-right: 5px;
+}
+
+
+.pan2 {
+    height: auto;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+.pan1 {
+    height: 100%;
+    width: auto;
+    height: 400px;
+}
+
+#resize {
+    text-align: center;
+    z-index: 1;
+    cursor: s-resize
 }

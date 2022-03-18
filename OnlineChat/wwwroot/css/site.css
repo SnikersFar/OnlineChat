@@ -10,8 +10,9 @@ body {
 }
 .container {
     display: flex;
-    flex-grow: 3;
-    justify-content: center
+    /*flex-grow: 3;*/
+    justify-content: center;
+    max-height: 80vh;
 }
 
 a.navbar-brand {
@@ -131,3 +132,11 @@ a.SendMes {
     height: 100px;
     overflow-y: auto;
 }
+
+.AxysChat {
+    position: relative;
+    cursor: ns-resize;
+    overflow: auto;
+}
+
+
