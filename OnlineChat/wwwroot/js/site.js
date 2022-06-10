@@ -174,6 +174,5 @@
     });
 
 
-
     hubConnection.start();
 });
